@@ -37,7 +37,7 @@ def trades():
         ticker = request.args.get("ticker")
         if ticker:
             params["ticker"] = ticker
-        data = kalshi_get("/trades", params=params)
+        data = kalshi_get("/markets/trades", params=params)
         return jsonify(data)
     except requests.HTTPError as e:
         return jsonify({"error": f"Kalshi API error: {e.response.status_code} - {e.response.text}"}), 502
