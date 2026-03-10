@@ -126,4 +126,6 @@ if __name__ == "__main__":
     print("\n🚀 KalshiPulse server starting...")
     print("📡 Proxying: https://api.elections.kalshi.com/trade-api/v2")
     print("🌐 Open your browser at: http://localhost:5000\n")
-app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
